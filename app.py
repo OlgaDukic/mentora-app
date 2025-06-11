@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import csv
+
 
 app = Flask(__name__)
 
@@ -36,9 +37,13 @@ def admin():
     return render_template('admin.html', prijave=prijave)
 from flask import request
 
+from flask import request, render_template
+import csv
+
 @app.route('/admin')
 def admin():
     lozinka = request.args.get('lozinka')
+
     if lozinka != "mentoralozinka":
         return "Pristup zabranjen. Dodaj ?lozinka=mentoralozinka u URL."
 
