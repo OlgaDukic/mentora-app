@@ -1,1 +1,33 @@
-<h1>Mentora</h1>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentora – Pametno učenje</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; text-align: center; }
+    header { background-color: #6200ee; color: white; padding: 40px 20px; }
+    img.logo { height: 80px; }
+    .content { margin-top: 40px; }
+    a.button {
+      background-color: #03dac5; color: #000; padding: 15px 30px;
+      border-radius: 5px; text-decoration: none; font-weight: bold;
+      display: inline-block; margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='img/mentora_logo.png') }}" alt="Mentora logo" class="logo">
+    <h1>Dobrodošli na platformu Mentora</h1>
+    <p>Pametno učenje uz AI podršku</p>
+  </header>
+
+  <div class="content">
+    <p>Pripremili smo besplatan letnji kurs za učenike 5–7. razreda.  
+    Obnovi gradivo uz pomoć mentora i AI tutora – jednostavno, zanimljivo i jasno.</p>
+
+    <a href="{{ url_for('letnji_kurs') }}" class="button">Prijavi se za letnji kurs</a>
+  </div>
+</body>
+</html>
