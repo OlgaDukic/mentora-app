@@ -1,1 +1,18 @@
-<h1>Mentora</h1>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Uspešna prijava</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 50px; text-align: center; background-color: #f5f5f5; }
+    h2 { color: #4caf50; }
+    a { display: inline-block; margin-top: 20px; color: #6200ee; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Hvala na prijavi, {{ ime }}!</h2>
+  <p>Uskoro ćemo vam poslati sve informacije na email.</p>
+  <a href="{{ url_for('index') }}">↩ Nazad na početnu</a>
+</body>
+</html>
+
