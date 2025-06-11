@@ -34,6 +34,24 @@ def admin():
     except FileNotFoundError:
         prijave = [["Nema prijava još."]]
     return render_template('admin.html', prijave=prijave)
+from flask import request
+
+@app.route('/admin')
+def admin():
+    lozinka = request.args.get('lozinka')
+    if lozinka != "mentoralozinka":
+        return "Pristup zabranjen. Dodaj ?lozinka=mentoralozinka u URL."
+
+    prijave = []
+    try:
+        with open('prijave.csv', mode='r', encoding='utf-8') as file:
+            csv_reader = csv.reader(file)
+            for red in csv_reader:
+                prijave.append(red)
+    except FileNotFoundError:
+        prijave = [["Nema prijava još."]]
+
+    return render_template('admin.html', prijave=prijave)
 
 if __name__ == '__main__':
     import os
