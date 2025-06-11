@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregled prijava – Mentora</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background-color: #f9f9f9; }
+    h2 { text-align: center; color: #6200ee; }
+    table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+    th, td { padding: 12px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #eee; }
+  </style>
+</head>
+<body>
+  <h2>Pregled prijava za letnji kurs</h2>
+  <table>
+    <tr>
+      <th>Ime i prezime</th>
+      <th>Razred</th>
+      <th>Email roditelja</th>
+      <th>Telefon</th>
+    </tr>
+    {% for red in prijave %}
+    <tr>
+      {% for celija in red %}
+      <td>{{ celija }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
