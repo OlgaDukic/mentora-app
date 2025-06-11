@@ -1,1 +1,36 @@
-<h1>Mentora</h1>
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Prijava za letnji kurs</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; background-color: #f9f9f9; }
+    h1 { color: #6200ee; }
+    form { max-width: 400px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
+    label { display: block; margin-top: 15px; }
+    input, button {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border-radius: 5px; border: 1px solid #ccc;
+    }
+    button { background-color: #6200ee; color: white; font-weight: bold; border: none; }
+  </style>
+</head>
+<body>
+  <h1>Prijavi se za besplatan letnji kurs</h1>
+  <form action="{{ url_for('prijava') }}" method="post">
+    <label>Ime i prezime učenika:</label>
+    <input type="text" name="ime" required>
+
+    <label>Razred koji je završen:</label>
+    <input type="text" name="razred" required>
+
+    <label>Email roditelja:</label>
+    <input type="email" name="email" required>
+
+    <label>Telefon (opciono):</label>
+    <input type="text" name="telefon">
+
+    <button type="submit">Pošalji prijavu</button>
+  </form>
+</body>
+</html>
